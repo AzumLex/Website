@@ -1,0 +1,75 @@
+Idee Webtechnologies Projekt:
+
+
+Ziel: Seite, die Suchende mit allerlei Informationen ausstattet, darunter einzelne Reiseorte (Steckbrief?), Reiseblogs, eine Übersicht über Escape Rooms sowie Kulinarik.
+
+Es soll auf der Hauptseite möglich sein, einen von (vorerst) 4 Reitern auszuwählen. 
+-Alternativ kann man direkt auf einer Karte (Google Maps implementieren, durch Api? Vielleicht nicht schwierig) einen Ort auszuwählen (auf dem eine Markierung auf denjenigen Orten gesetzt ist, zu denen es auf der Website bereits Informationen gibt ODER man kann per Suchfunktion einen Ort suchen (und wird zu dessen jeweilige Übersichtsseite weitergeleitet)
+-Auf der Übersichtsseits sollen Orte mit grundlegenden und wichtigen Informationen stehen, die aktuell sein sollen (Ziel dabei: ordentliche Struktur, ansehnlich gestalten). Es soll am Anfang einen Link geben, der direkt zu den Reiseblogs führt ("Klicke hier, um zu den Reiseblogs zu gelangen").
+-Auf der Reiseblog Seite soll es Artikel zu bestimmten Reisen geben (zB: Wien 2023), in denen ein spezifischer Urlaub ausführlich und mit spannenden Details sowie beschrieben wird (grundsätzlich nichts außergewöhnliches; wichtig wird die Ordnung, wie man die Artikel darstellt und wie man das ganze einfach erweiterbar aufbaut)
+-Außerdem eine Seite, die explizit Escape Rooms gewidmet ist (ähnlich zum Vorherigen; wichtig: die Struktur)
+-Ev. eine Seite für Kulinarik. Könnte man wieder mithilfe einer Karte gestalten, oder mit Bildern, durch die man browsen kann
+-Ev. Kontakt und Impressum
+-Ev. eine Account-Funktion/Login, damit User Kommentare verfassen können oder Listen anfertigen oder Downloads von Reiseplänen ausführen können
+-Ev. eine Bildergalerie
+
+(im Flowchart ist alles einmal drin, aber natürlich kann es sich noch verändern. Vielleicht (oder hoffentlich) kommen beim Ausarbeiten nochmal Verbesserungen.
+
+
+
+
+
+
+
+
+
+
+
+Ideensammlung:
+
+
+Eine Idee für Urlaubsorte. Es gibt bereits einige "Urlaubsguides", damit muss man konkurrieren.
+Die Idee wäre, konkrete Urlaubspläne zur Verfügung zu stellen. Das wäre das Hauptaugenmerk der Website. 
+Es muss also eine Homepage geben, auf der man ein Menü zur Auswahl hat, über das man einen Reiseort auswählen kann.
+
+
+Auswahlmenüs: 
+-> spezifischen Reiseort auswählen -> man wird zur Suchleiste weitergeleitet
+-> durch vorgeschlagene Orte "browsen" können
+-> bei den bestimmten Reiseorten sollte es ein Programm für die Aktivitäten geben, das halbwegs durchgeplant ist. 
+-> Bilder Galerie
+-> Generelle Übersicht über Länder
+
+Design: 
+-> im linken oberen Quadranten das Logo und der Schriftzug, über den man wieder zurück auf die Website kommt
+
+
+Die einzelnen Reiseorte sollten eigene Seiten sein, damit man sie gut per Suchanfrage finden kann
+
+
+Implementieren: 
+-Google Maps Darstellungen?
+-Drop Down Menus? Für Infos wie: Anreise. Das muss nicht immer jeder lesen, das könnte man standardmäßig eingeklappt haben.
+-Kommentar Funktion?
+
+-Inhalt: 
+-Die Reisepläne in strukturierter Form mit Attraktionen und Erklärung. 
+-Anekdoten zu den Reisen
+-Auffälliges, spannendes zu den Reiseorten (was einem aufgefallen ist)
+-Fotos
+-interaktive Karten
+-Packlisten?
+-Budgetkalkulator?
+-Links zu den bestimmten Seiten
+-links zu social media?
+
+
+
+
+-> Sprachfunktion (mehrsprachig, Auswahl zu Sprachauswahl)
+
+4 reiter
+-> einmal "reisen" mit generellen übersichten und Infos (steckbriefe):
+-> einmal "reiseberichten" mit ausführlichen berichten zu bestimmten ausflügen (zB athen 2023) 
+-> und einmal Escape Rooms. 
+-> UND einmal Kulinarik
