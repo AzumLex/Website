@@ -1,0 +1,108 @@
+/* In Internet gefunden: Reset der Standard-Margin und des -Paddings für das gesamte Dokument. Damit ist die Navigationsleiste bündig am oberen Websiterand */
+body, h1, h2, p, div, a {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* Style */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 2;
+}
+
+h1{
+  line-height: 1.2;   /* Abstand zwischen den einzelnen Zeilen! Bei der Überschrift sieht es sonst komisch aus, sobald sie sich über zwei Zeilen erstreckt */
+}
+
+
+
+
+
+
+
+
+
+
+  /* Navigationsbar oben */
+  /* Stil für die Navigationsleiste */
+  .navigationsbarOben {
+    background-color: #3498db; /* Hintergrundfarbe der Navigationsleiste */
+    padding: 15px 0; /* Innenabstand oben und unten */
+    display: flex;
+    justify-content: space-between;     /* space-between heißt, dass zwischen den beiden Elementen in unserer Navigationsbar Platz ist. Weil flexbox: platz ist je nach Ansichtsgröße variabel. */
+    align-items: center;
+  }
+  
+
+
+/* Style für die beiden Navigationsleisten (links und rechts)*/
+.navigationsbarObenLinks a,     /* das a steht dafür, dass der Style nur auf die Links angewendet wird, weil <a> */
+.navigationsbarObenRechts a {
+  text-decoration: none;
+  color: #fff; /* Schriftfarbe */
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 15px; /* Abstand zwischen den Elementen sowie zwischen dem Seitenrand links und rechts. 0 15 heißt: 0 für oben und unten, 15 für links und rechts */
+}
+
+/* Hover-Effekt für die Navigationsbar-Elemente */
+.navigationsbarObenLinks a:hover, /* das a steht dafür, dass explizit die Links unterstrichen werden! */
+.navigationsbarObenRechts a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+  /* Navigationsbar unten */
+
+  /* Stil für die Navigationsleiste */
+  .navigationsbarUnten {
+    padding: 15px 0; /* Innenabstand oben und unten */
+    display: flex;  /* geben wir das an, behandeln wir die Navigationsleiste als Flexbox, darum können wir justify content und align items benutzen */
+    justify-content: center;     /* justify content richtet die Elemente nach der Horizontalen aus */
+    align-items: center;         /* align items richtet die Elemente nach der Vertikalen aus */
+  }
+
+
+/* selbe Klasse, aber nur für Links geltend (deshalb das a) */
+.navigationsbarUnten a {
+  text-decoration: none;
+  color: #000000; /* Schriftfarbe */
+  font-size: 4vw;
+  font-weight: bold;
+  margin: 0 15px; /* Abstand zwischen den Elementen sowie zwischen dem Seitenrand links und rechts. 0 15 heißt: 0 für oben und unten, 15 für links und rechts */
+}
+
+/* Hover-Effekt für die Navigationsbar-Elemente */
+.navigationsbarUnten a:hover {
+  text-decoration: underline !important;
+}
+
+
+
+
+
+footer{
+  color:black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

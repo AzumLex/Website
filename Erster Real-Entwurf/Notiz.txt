@@ -1,0 +1,8 @@
+Durch RWD ist mein vorheriges Design nicht mehr so aufgegangen, wie ich mir das vorgestellt hatte. 
+Hab dann angefangen, umzugestalten und umzustrukturieren, bin aber noch nicht ganz zufrieden. 
+Hab das neue Design noch nicht auf alle Seiten angewandt, das wollte ich erst machen, wenn ich halbwegs sicher bin, dass es so bleibt.
+Auch das alte Design werd ich noch aus dem Code entfernen (u.a. die alte Navigationsbar Oben).
+
+Ich find es schwierig, einzuschätzen, was in das main.css kommt und was wirklich in die einzelnen css files soll. Aber es wird immer klarer, je mehr man herumprobiert.
+
+Die Schrift vom Kontaktformular muss noch kleiner werden, das ist mir gerade noch aufgefallen - kommt auch noch auf die Liste zum Ausbessern. 
