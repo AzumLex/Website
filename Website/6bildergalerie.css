@@ -1,0 +1,208 @@
+/* Inspiriert von: https://www.youtube.com/watch?v=JX5qDzWDF4U
+    Das Endergebnis hat super ausgesehen, darum hab ich mir gedacht, man könnte das so probieren. 
+    Anschließend bin ich den Code durchgegangen und hab ihn kommentiert, mit dem, was ich daraus gelernt hab 
+    
+    Die Vorlage hatte kein Responsive Web Design -> Ich hab es so angepasst, dass die Bilder sich verkleinern und bei kleinen Bildschirmen von 5 auf 3 angezeigten Bildern reduzieren
+*/
+
+.inhalt_container {     /* ausnahmsweise überschreiben wir die General-Klasse, um die schwarzen, vertikalen Linien links und rechts zu entfernen */
+    border-left: none;
+    border-right: none;
+}
+
+
+
+
+
+/* Bilderkarusell */
+.galerie{
+    width: 100%;    
+}
+
+.galerie-container{     /* = Übergeordnete Klasse von den Galerie-Items */
+    align-items: center;
+    display: flex; 
+    height: 400px;      /* 400px war die Vorlage. Wir wollen die restlichen Galerie-Items in Relation zu diesem setzen und nur diesen Wert per media queries adaptieren. Die Height-Werte in den galerie-items beziehen sich auf diesen Wert */
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.galerie-item{      /* Klasse für die einzelnen Galerie-Bilder */
+    height: 50%;    /* 50% von der height (400px) in .galerie-container. Das funktioniert, denn: Prozentangaben beziehen sich auf die übergeordnete Klasse. In dem Fall ist galerie-item innerhalb von img der Klasse "galerie-container" untergeordnet und übernimmt die Prozentwerte. Wichtig: es geht um den Höhenwert! Die % von der height von galerie-item beziehen sich auf den Wert der HÖHE der übergeordneten Klasse*/
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 33%;
+    z-index: 0;     /* z-index für alle Elemente standardmäßig auf 0 setzen -> so werden sie auf der "untersten" Ebene angezeigt */
+    border-radius: 15px;
+    background-size: contain;
+}
+
+.galerie-item-1{
+    left: 15%;
+    opacity: .4;                    /* die Deckkraft wird bei Bilder 1 und 5 verringert, damit es diesen "fade-out" Effekt bekommt und aus dem Fokus herausrückt */
+    transform: translateX(-50%);    /* Wird (bei allen Bildern) verwendet, damit es horizontal zentriert ist */
+}
+
+.galerie-item-2, .galerie-item-4{
+    height: 62.5%;      /* standardmäßig: 250px */
+    opacity: 0.8;
+    width: 38%;
+    z-index: 1;         /* je höher der z-index, desto "höher" die Ebene. Weil der z-index von galerie-item auf 0 ist (was auch für galerie-item 1 gilt), wird item 2 ÜBER item 1 angezeigt */
+}
+
+.galerie-item-2{
+    left: 30%;          /* hier wird das linke Ende des Elements um 30% der Breite des übergeordneten Elements von dessen linkem Rand entfernt platziert */
+    transform: translateX(-50%);
+}
+
+.galerie-item-3{    /* Das Bild, das vorne in der Mitte angezeigt wird! */
+    box-shadow: -2px 5px 33px 6px rgba(0,0,0,0.35);
+    height: 75%;  /* standardmäßig: 300px */
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 43%;
+    z-index: 2;
+}
+
+.galerie-item-4{    /* Bild Nummer 4 */
+    left: 70%;                      /* Abstand von links */
+    transform: translateX(-50%);    /* Bewegung nach links */
+}
+
+.galerie-item-5{    /* Bild ganz rechts (fünftes Bild) */
+    left: 85%;      /* etwas mehr als bei Bild 4 */
+    opacity: .4;    /* Sichtbarkeit weniger, damit es verblasst erscheint */
+    transform: translateX(-50%);
+}
+
+.galerie-einstellungen{
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+    height: 100px;
+}
+
+.galerie-einstellungen button{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;                /* sorgt dafür, dass, wenn man drüber hovert, der Mauspfeil zu einem Zeiger wird -> soll anzeigen, dass man drauf klicken kann */
+    font-size: 30px;
+    margin: 0 50px;                 /* oben und unten 0 px, links und rechts 50px Abstand */
+    padding: 0 12px;                /* der Innenabstand (zwsichen Text und Rand vom Button ist oben und unten 0, links und rechts 12px */
+    text-transform: capitalize;
+}
+
+.galerie-einstellungen-button:focus{        /* Damit spricht man wohl das an, wenn man ein Element per Tastatur, Tabulator-Taste oder Mausklick ausgewählt wird */
+    outline: none;                          /* entfernt den (standardmäßigen) Rahmen -> besser für die einheitliche Wahrnehmung (anscheinend) */
+}
+
+.galerie-einstellungen-previous{
+    position: relative;             /* statt <position: static> wird <position: relative> verwendet -> ohne das würden die Einstellungen: Top, Bottom, Right und Left keinen Effekt haben */
+}
+
+.galerie-einstellungen-previous::before{
+    border: solid #000;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;                /* definiert die Länge der rechten Pfeil-Spitzen-Linie des rechten Pfeils */
+    width: 5px;
+    left: -30px;                /* versetzt den Pfeil um 30px nach links */
+    padding: 10px;
+    position: absolute;
+    top: 25%;                   /* legt den Abstand überhalb fest */
+    transform: rotate(135deg) translateY(-50%);     /* lässt die Pfeilspitze rotieren */
+    transition: left 0.15s ease-in-out;             /* so lange braucht der Pfeil, damit er sich nach links bewegt (wenn man drauf drückt) */
+    
+}
+
+/* wenn über den linken Pfeil gehovert wird, verschiebt er sich um 40px nach rechts */
+.galerie-einstellungen-previous:hover::before{
+    left: -40px;
+}
+
+.galerie-einstellungen-next{
+    position: relative;         /* gleiches wie oben: entfernt man die Zeile, ist der Pfeil nicht mehr an der richtigen Position! */
+}
+
+.galerie-einstellungen-next::before{
+    border: solid #000;
+    border-width: 0 5px 5px 0; 
+    content: '';
+    display: inline-block; 
+    height: 5px;
+    width: 5px;
+    right: -30px;
+    padding: 10px;
+    position: absolute;
+    top: 45%;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: right 0.15s ease-in-out;
+    
+}
+
+/* wenn über den rechten Pfeil gehovert wird, verschiebt er sich um 40px nach links */
+.galerie-einstellungen-next:hover:before{
+    right: -40px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsive Web Design für die Bilder */
+
+/* mittlere Bildschirme: Etwas runterskalieren */
+@media screen and (min-width: 620px) and (max-width: 1024px){
+    .galerie-container{
+        height: 38vw;  /* das Verhältnis zwischen height und width ist 2.5 -> also width / height = 2.5 */
+        max-width: 95vw;
+    }
+  }
+  
+
+  /* kleine Bildschirme: weit runter skalieren */
+@media screen and (max-width: 620px){
+      
+    .galerie-container{
+        height: 40vw;  
+        max-width: 100vw;
+    }
+
+    .galerie-item-1, .galerie-item-5{
+        display: none;                      /* Das ganz linke und ganz rechte Element (Bild) sollen nicht mehr angezeigt werden, damit die mittleren Bilder größer sein können */
+    }
+
+    /* von Item 2, 3 und 4 (den mittleren 3) werden height und width um 30% erhöht. Wenn bei height 90% steht, sind gemeint: 90% der max-width des galerie-containers. Und die liegt bei 100vw, also 100% der viewport-width */
+    .galerie-item-2, .galerie-item-4{
+        width: 45.6%;         /* ursprünglich: 38% und 62.5% */
+        height: 75%;
+    }
+
+    .galerie-item-3{
+        width: 51.6%;         /* ursprünglich: 43% und 75% */
+        height: 90%;
+    }
+   
+
+    /* Einstellungsmenü (Pfeile) etwas anpassen */
+    .galerie-einstellungen button{
+        font-size: 18px;
+        margin: 0 0;            /* Abstand zwischen den beiden Pfeilen auf 0 setzen */
+        padding: 0 8px; /
+    }
+
+    .galerie-einstellungen-previous::before,
+    .galerie-einstellungen-next::before{
+        width: 3px; /* Pfeilbreite verringern */
+        height: 3px; /* Pfeilhöhe verringern */
+    }
+}

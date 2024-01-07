@@ -1,0 +1,102 @@
+#wetter {                       /* mit dem # sprechen wir genau die "wetter" Klasse an! (die gesamte graue Box mit den Wetterdaten) */
+  display: flex;
+  flex-direction: column;
+  background-color: #666666;  /* Grauer Hintergrund -> Box */
+  padding: 20px;                /* Abstand vom grauen Rand der Box zu den inneren Elementen (sowohl links und rechts als auch oben und unten) */
+  border-radius: 10px;
+  text-align: center;
+
+  color: white;             /* Schrift Farbe */
+  width: 95%;                 /* Begrenzt auf 50% der Bildschirmbreite */
+  margin: 0 auto;             /* Zentriert die Box horizontal */
+  }
+
+
+
+      /* Inhalt der Wetter-Box */
+
+  #ort{                                               /* Überschrift mit dem Ortsnamen */
+    font-size: 5vw;
+    border-bottom: 1px solid rgb(255, 255, 255);    /* Unterstrich unter der Stadt */
+  }
+
+  #temperatur, #beschreibung, #uhrzeit, input{       /* Zeilen mit den Wetterdaten und die Inputbox -> input ohne #, weil es keine ID ist! */   
+    font-size: 2.5vw;
+  }
+
+    /* Container für den Knopf und das Input-Feld (auch im Wetter-Container!) */
+  #eingabe{                                             
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+
+
+
+      /* Knopf für die Ort-Suche */
+
+  button{
+    padding: 5px;                                     /* damit der Knopf nicht so schmal ist */
+    font-size: 2.5vw;   
+    margin-bottom: 10px;                              /* Abstand zum unteren Element -> damit sie nicht so zusammenkleben */
+    cursor: pointer;                                  /* um anzuzeigen, dass beim Klicken was passiert */
+    transition: background-color 0.3s ease-in-out;    /* damit die Farbe nicht abrupt, sondern angenehm wechselt */
+  }
+
+  button:hover {                      /* wenn man über den Knopf hovert, wechselt er die Farbe (nur solange man hovert) */
+    background-color: #0067ee;
+  }
+
+
+
+      /* Eingabe Feld */
+
+  input {                                             /* Einstellungen für das Eingabefeld */
+    padding: 5px;                                     /* Innenabstand -> damit die Box nicht so schmal ist */
+    margin-bottom: 10px;                              /* Abstand zum unteren Element -> damit sie nicht so zusammenkleben */
+    border: 2px solid #df0000;                        
+    border-radius: 10px;                              /* Rand etwas breiter machen */
+    text-align: center;                               /* Damit das Eingegebene in der Mitte steht (passend zu der Ausrichtung der anderen Elemente */
+    outline: none;                                    /* Entfernt die Standard-Umrandung, die das Feld hat, wenn man es anklickt */
+    transition: border-color 0.3s ease-in-out;        /* Wir legen fest: wenn etwas mit border-color (also der Farbe der Umrandung) gemacht wird (animations-technisch), dann dauert der Übergang xx Sekunden und wird mit ease-in-out gemacht */
+  }
+
+  input:focus {                                         /* Wenn man auf das Eingabefeld drückt, dann ändert sich die Farbe der Umrandung */
+    border-color: #0067ee;                            /* Farbe wechseln */
+  }
+
+
+
+
+
+
+    /* Responsive Web Design */
+
+/* mittlere Bildschirme: Etwas runterskalieren */
+@media screen and (min-width: 620px) and (max-width: 1024px){
+    #ort{                                           /* Überschrift mit dem Ortsnamen */
+        font-size: 8vw;            
+    } 
+    #temperatur, #beschreibung, #uhrzeit, input{    /* Zeilen mit den Wetterdaten sowie die Inputbox */
+        font-size: 4vw;
+    }
+    button{
+      font-size: 5.5vw; 
+    }
+  }
+  
+  /* kleine Bildschirme: weit runter skalieren */
+  @media screen and (max-width: 620px){
+    #ort{                                           /* Überschrift mit dem Ortsnamen */
+        font-size: 8vw;            
+    } 
+    #temperatur, #beschreibung, #uhrzeit, input{    /* Zeilen mit den Wetterdaten sowie die Inputbox */
+        font-size: 4vw;     
+    }
+    button{
+      font-size: 5.5vw; 
+    }
+  }
